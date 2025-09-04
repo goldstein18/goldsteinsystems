@@ -10,8 +10,14 @@
   border-bottom: none;
 }
 
+.navbar.scrolled {
+  background: #0f1d50;
+  backdrop-filter: none;
+  box-shadow: 0 2px 10px rgba(15, 29, 80, 0.3);
+}
+
 .nav-container {
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
@@ -139,7 +145,7 @@
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
   .nav-container {
-    width: 95%;
+    width: 92%;
   }
   
   .nav-menu {
@@ -183,7 +189,7 @@
 
 @media (max-width: 480px) {
   .nav-container {
-    width: 98%;
+    width: 96%;
   }
   
   .logo-image {
