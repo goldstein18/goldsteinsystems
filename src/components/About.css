@@ -1,0 +1,167 @@
+.about {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.about-text p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f1d50;
+  margin-bottom: 0.5rem;
+}
+
+.stat p {
+  color: #666;
+  font-weight: 500;
+  margin: 0;
+}
+
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+  width: 400px;
+  height: 300px;
+}
+
+.world-map {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #e0f2fe, #b3e5fc);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #0f1d50;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.dot-1 {
+  top: 20%;
+  left: 25%;
+  animation-delay: 0s;
+}
+
+.dot-2 {
+  top: 35%;
+  right: 20%;
+  animation-delay: 0.5s;
+}
+
+.dot-3 {
+  bottom: 30%;
+  left: 15%;
+  animation-delay: 1s;
+}
+
+.dot-4 {
+  top: 60%;
+  right: 35%;
+  animation-delay: 1.5s;
+}
+
+.dot-5 {
+  bottom: 20%;
+  right: 30%;
+  animation-delay: 2s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+  
+  .stats {
+    justify-content: center;
+  }
+  
+  .about-visual {
+    width: 300px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 0;
+  }
+  
+  .about-text h2 {
+    font-size: 2rem;
+  }
+  
+  .stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .stat h3 {
+    font-size: 2rem;
+  }
+  
+  .about-visual {
+    width: 250px;
+    height: 200px;
+  }
+}
