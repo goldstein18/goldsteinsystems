@@ -44,12 +44,10 @@
 }
 
 .hero-container {
-  max-width: 1200px;
+  width: 85%;
   margin: 0 auto;
   padding: 0 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: flex;
   align-items: center;
   position: relative;
   z-index: 3;
@@ -164,6 +162,7 @@
 
 @media (max-width: 768px) {
   .hero-container {
+    width: 92%;
     padding-top: 70px;
   }
   
@@ -194,6 +193,10 @@
 }
 
 @media (max-width: 480px) {
+  .hero-container {
+    width: 95%;
+  }
+  
   .hero-title {
     font-size: 2rem;
   }

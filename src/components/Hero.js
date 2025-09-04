@@ -30,22 +30,6 @@ const Hero = () => {
             <a href="#insights" className="btn btn-secondary">Read Our Insights</a>
           </div>
         </div>
-        <div className="hero-image">
-          <div className="hero-visual">
-            <div className="floating-card card-1">
-              <i className="fas fa-shield-alt"></i>
-              <h4>Cybersecurity</h4>
-            </div>
-            <div className="floating-card card-2">
-              <i className="fas fa-code"></i>
-              <h4>Development</h4>
-            </div>
-            <div className="floating-card card-3">
-              <i className="fas fa-rocket"></i>
-              <h4>Innovation</h4>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
