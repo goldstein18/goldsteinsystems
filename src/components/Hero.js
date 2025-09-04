@@ -14,7 +14,7 @@ const Hero = () => {
           onLoadStart={() => console.log('Video loading started')}
           onCanPlay={() => console.log('Video can play')}
         >
-          <source src="https://www.youtube.com/embed/YOUR_VIDEO_ID" type="video/mp4" />
+          <source src="https://customer-ayxnluzj1q25r5ea.cloudflarestream.com/b740b953d7f0b6639744cb7e3c0c9927/manifest/video.m3u8" type="application/vnd.apple.mpegurl" />
           Your browser does not support the video tag.
         </video>
         <div className="video-overlay"></div>
