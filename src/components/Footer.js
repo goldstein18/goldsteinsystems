@@ -7,8 +7,8 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>Bain & Company</h3>
-            <p>Helping ambitious leaders define the future.</p>
+            <h3>Goldstein Systems</h3>
+            <p>Building the future, today.</p>
             <div className="social-links">
               <a href="#"><i className="fab fa-linkedin"></i></a>
               <a href="#"><i className="fab fa-twitter"></i></a>
@@ -19,9 +19,9 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Services</h4>
             <ul>
-              <li><a href="#services">Strategy</a></li>
-              <li><a href="#services">Organization</a></li>
-              <li><a href="#services">Transformation</a></li>
+              <li><a href="#services">Cybersecurity</a></li>
+              <li><a href="#services">Development</a></li>
+              <li><a href="#services">Innovation</a></li>
               <li><a href="#services">Operations</a></li>
             </ul>
           </div>
@@ -36,13 +36,13 @@ const Footer = () => {
           </div>
           <div className="footer-section">
             <h4>Contact</h4>
-            <p>Email: info@bain.com</p>
+            <p>Email: contact@goldstein.systems</p>
             <p>Phone: +1 (555) 123-4567</p>
             <p>Address: 131 Dartmouth St, Boston, MA 02116</p>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2024 Bain & Company. All rights reserved.</p>
+          <p>&copy; 2025 Goldstein Systems. All rights reserved.</p>
         </div>
       </div>
     </footer>
