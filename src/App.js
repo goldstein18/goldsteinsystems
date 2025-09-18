@@ -10,6 +10,7 @@ import About from './components/About';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import ProposalG5499 from './components/ProposalG5499';
+import SEOHead from './components/SEOHead';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,6 +33,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <SEOHead />
         <Routes>
           <Route path="/" element={
             <>
