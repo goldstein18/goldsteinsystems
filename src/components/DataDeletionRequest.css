@@ -1,0 +1,234 @@
+.data-deletion-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-family: 'Source Sans Pro', 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.data-deletion-content {
+  background-color: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(15, 29, 80, 0.15);
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid rgba(15, 29, 80, 0.1);
+}
+
+.logo-section-deletion {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.deletion-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.data-deletion-content h1 {
+  text-align: center;
+  color: #0f1d50;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.deletion-form {
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  color: #0f1d50;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.9rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: 'Source Sans Pro', sans-serif;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #0f1d50;
+  box-shadow: 0 0 0 3px rgba(15, 29, 80, 0.1);
+}
+
+.form-group input::placeholder {
+  color: #999;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #0f1d50, #1a365d);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Source Sans Pro', sans-serif;
+  box-shadow: 0 4px 14px rgba(15, 29, 80, 0.3);
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(15, 29, 80, 0.4);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-section {
+  background: linear-gradient(135deg, rgba(15, 29, 80, 0.05), rgba(26, 54, 93, 0.05));
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #0f1d50;
+  margin-bottom: 1.5rem;
+}
+
+.info-section h3 {
+  color: #0f1d50;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.info-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.info-section li {
+  color: #333;
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.info-section li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #0f1d50;
+  font-weight: bold;
+}
+
+.footer-info {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.footer-info p {
+  color: #666;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.footer-info strong {
+  color: #0f1d50;
+  font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .data-deletion-container {
+    padding: 1rem;
+  }
+
+  .data-deletion-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .data-deletion-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .deletion-logo {
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .data-deletion-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .data-deletion-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .deletion-logo {
+    height: 45px;
+  }
+}

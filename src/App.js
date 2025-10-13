@@ -11,6 +11,7 @@ import CTA from './components/CTA';
 import Footer from './components/Footer';
 import ProposalG5499 from './components/ProposalG5499';
 import SEOHead from './components/SEOHead';
+import DataDeletionRequest from './components/DataDeletionRequest';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,6 +44,7 @@ function App() {
             </>
           } />
           <Route path="/propuestaG5499" element={<ProposalG5499 />} />
+          <Route path="/request" element={<DataDeletionRequest />} />
         </Routes>
       </div>
     </Router>
