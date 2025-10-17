@@ -45,6 +45,36 @@ const DataDeletionRequest = () => {
           <img src="/logo.png" alt="Goldstein Systems" className="deletion-logo" />
         </div>
         
+        <div style={{
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          padding: '2.5rem 2rem',
+          borderRadius: '15px',
+          marginBottom: '2rem',
+          boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+          textAlign: 'center'
+        }}>
+          <h1 style={{
+            color: 'white',
+            fontSize: '2.5rem',
+            fontWeight: 'bold',
+            margin: '0 0 1rem 0',
+            textTransform: 'uppercase',
+            letterSpacing: '2px'
+          }}>The Ride Studio App</h1>
+          <p style={{
+            color: 'white',
+            fontSize: '1.5rem',
+            margin: '0',
+            fontWeight: '600'
+          }}>by WOSKI GROUP LTD</p>
+          <p style={{
+            color: '#ffd700',
+            fontSize: '1.2rem',
+            margin: '1.5rem 0 0 0',
+            fontWeight: 'bold'
+          }}>Account ID: 8251327401753570827</p>
+        </div>
+        
         <h1>Data Deletion Request</h1>
         <p className="subtitle">
           Submit a request to delete your personal data from our systems. 
