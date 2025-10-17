@@ -1,0 +1,452 @@
+.careers-page {
+  min-height: 100vh;
+  background: white;
+}
+
+.careers-hero {
+  background: linear-gradient(135deg, #0f1d50 0%, #1a365d 100%);
+  color: white;
+  padding: 8rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.careers-hero .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.1;
+}
+
+.highlight {
+  color: #c7a256;
+}
+
+.careers-main {
+  padding: 6rem 0;
+}
+
+.careers-main .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.careers-intro {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.careers-intro h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 2rem 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.careers-intro p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.career-areas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 6rem;
+}
+
+.career-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.career-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: #c7a256;
+}
+
+.career-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.career-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin: 0 0 1.5rem 0;
+}
+
+.explore-button {
+  background: none;
+  border: 2px solid #0f1d50;
+  color: #0f1d50;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.explore-button:hover {
+  background: #0f1d50;
+  color: white;
+}
+
+.career-stories-section {
+  margin-bottom: 6rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-header h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.explore-stories-button {
+  background: linear-gradient(135deg, #c7a256, #b8935a);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.explore-stories-button:hover {
+  background: linear-gradient(135deg, #b8935a, #a68844);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(199, 162, 86, 0.3);
+}
+
+.career-stories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.story-card {
+  background: #f8fafc;
+  padding: 2rem;
+  border-left: 4px solid #c7a256;
+}
+
+.story-card h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.story-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin: 0 0 1rem 0;
+}
+
+.author {
+  font-size: 0.9rem;
+  color: #c7a256;
+  font-weight: 500;
+}
+
+.people-section {
+  margin-bottom: 6rem;
+}
+
+.people-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.people-text {
+  text-align: center;
+}
+
+.people-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.people-text h3 {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0 0 1.5rem 0;
+}
+
+.people-button {
+  background: #0f1d50;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.people-button:hover {
+  background: #1a365d;
+  transform: translateY(-2px);
+}
+
+.awards-section {
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+.awards-content h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.awards-content h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.awards-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.job-alert {
+  background: #fef3cd;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 6rem;
+}
+
+.alert-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.alert-icon {
+  font-size: 1.5rem;
+  color: #92400e;
+  margin-top: 0.2rem;
+}
+
+.alert-text h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #92400e;
+  margin: 0 0 0.5rem 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.alert-text p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #92400e;
+  margin: 0;
+}
+
+.newsletter-section {
+  background: #f8fafc;
+  padding: 3rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.newsletter-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.newsletter-content p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0 0 2rem 0;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  border-color: #c7a256;
+}
+
+.subscribe-button {
+  background: linear-gradient(135deg, #c7a256, #b8935a);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.subscribe-button:hover {
+  background: linear-gradient(135deg, #b8935a, #a68844);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .careers-hero {
+    padding: 6rem 0 4rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .careers-intro h2 {
+    font-size: 2rem;
+  }
+
+  .careers-intro p {
+    font-size: 1rem;
+  }
+
+  .career-areas {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .career-stories {
+    grid-template-columns: 1fr;
+  }
+
+  .people-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .alert-content {
+    flex-direction: column;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .careers-hero {
+    padding: 4rem 0 3rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .careers-main {
+    padding: 4rem 0;
+  }
+
+  .careers-main .container {
+    padding: 0 1rem;
+  }
+
+  .career-card {
+    padding: 1.5rem;
+  }
+
+  .story-card {
+    padding: 1.5rem;
+  }
+
+  .newsletter-section {
+    padding: 2rem 1rem;
+  }
+}

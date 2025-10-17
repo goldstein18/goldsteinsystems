@@ -1,15 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import Sidebar from './Sidebar';
 import './Navbar.css';
 
 const Navbar = ({ isMenuOpen, toggleMenu }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+  const [isScrolled, setIsScrolled] = useState(!isHomePage);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
   const [hoverTimeout, setHoverTimeout] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 50);
+      if (isHomePage) {
+        setIsScrolled(scrollTop > 50);
+      } else {
+        setIsScrolled(true);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -19,7 +27,7 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
         clearTimeout(hoverTimeout);
       }
     };
-  }, [hoverTimeout]);
+  }, [hoverTimeout, isHomePage]);
 
   const handleIndustriesMouseEnter = () => {
     console.log('Mouse entered Industries');
@@ -52,18 +60,24 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
     setHoverTimeout(timeout);
   };
 
+  const handleComingSoon = (e) => {
+    e.preventDefault();
+    alert('Coming Soon');
+  };
+
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="nav-container">
+    <>
+      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+        <div className="nav-container">
         <div className="nav-left">
-          <div className="hamburger" onClick={toggleMenu}>
+          <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
             <span className="bar"></span>
             <span className="bar"></span>
             <span className="bar"></span>
           </div>
-          <div className="nav-logo">
+          <a href="/" className="nav-logo">
             <img src="/logo.png" alt="Goldstein Systems Logo" className="logo-image" />
-          </div>
+          </a>
         </div>
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <li 
@@ -73,9 +87,8 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
           >
             <a href="#industries" className="nav-link">
               Industries
-              <div className="triangle-icon"></div>
             </a>
-            {console.log('isIndustriesOpen:', isIndustriesOpen)}
+            {/* {console.log('isIndustriesOpen:', isIndustriesOpen)}
             {isIndustriesOpen && (
               <div 
                 className="dropdown-menu"
@@ -138,36 +151,31 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
                   </div>
                 </div>
               </div>
-            )}
+            )} */}
           </li>
           <li className="nav-item">
             <a href="#services" className="nav-link">
               Consulting Services
-              <div className="triangle-icon"></div>
             </a>
           </li>
           <li className="nav-item">
-            <a href="#digital" className="nav-link">
+            <a href="#digital" className="nav-link" onClick={handleComingSoon}>
               Digital
-              <div className="triangle-icon"></div>
             </a>
           </li>
           <li className="nav-item">
-            <a href="#insights" className="nav-link">
+            <a href="#insights" className="nav-link" onClick={handleComingSoon}>
               Insights
-              <div className="triangle-icon"></div>
             </a>
           </li>
           <li className="nav-item">
             <a href="#about" className="nav-link">
               About
-              <div className="triangle-icon"></div>
             </a>
           </li>
           <li className="nav-item">
-            <a href="#careers" className="nav-link">
+            <a href="/careers" className="nav-link">
               Careers
-              <div className="triangle-icon"></div>
             </a>
           </li>
         </ul>
@@ -176,6 +184,8 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
         </div>
       </div>
     </nav>
+    <Sidebar isOpen={isMenuOpen} onClose={toggleMenu} />
+    </>
   );
 };
 

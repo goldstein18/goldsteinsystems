@@ -12,6 +12,12 @@ import Footer from './components/Footer';
 import ProposalG5499 from './components/ProposalG5499';
 import SEOHead from './components/SEOHead';
 import DataDeletionRequest from './components/DataDeletionRequest';
+import Accessibility from './components/Accessibility';
+import Terms from './components/Terms';
+import Privacy from './components/Privacy';
+import CookiePolicy from './components/CookiePolicy';
+import Login from './components/Login';
+import Careers from './components/Careers';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,6 +51,42 @@ function App() {
           } />
           <Route path="/propuestaG5499" element={<ProposalG5499 />} />
           <Route path="/request" element={<DataDeletionRequest />} />
+          <Route path="/accessibility" element={
+            <>
+              <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+              <Accessibility />
+              <Footer />
+            </>
+          } />
+          <Route path="/terms" element={
+            <>
+              <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+              <Terms />
+              <Footer />
+            </>
+          } />
+          <Route path="/privacy" element={
+            <>
+              <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+              <Privacy />
+              <Footer />
+            </>
+          } />
+          <Route path="/cookies" element={
+            <>
+              <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+              <CookiePolicy />
+              <Footer />
+            </>
+          } />
+          <Route path="/login" element={<Login />} />
+          <Route path="/careers" element={
+            <>
+              <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+              <Careers />
+              <Footer />
+            </>
+          } />
         </Routes>
       </div>
     </Router>

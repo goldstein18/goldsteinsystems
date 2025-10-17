@@ -1,10 +1,11 @@
 import React from 'react';
 import './Hero.css';
+import heroMainGold from '../assets/heromaingold.jpg';
 
 const Hero = () => {
   return (
     <section className="hero">
-      <div className="video-background">
+      {/* <div className="video-background">
         <video 
           autoPlay 
           muted 
@@ -18,6 +19,10 @@ const Hero = () => {
           Your browser does not support the video tag.
         </video>
         <div className="video-overlay"></div>
+      </div> */}
+      <div className="image-background">
+        <img src={heroMainGold} alt="Hero Background" className="hero-image" />
+        <div className="video-overlay"></div>
       </div>
       <div className="hero-container">
         <div className="hero-content">
@@ -27,7 +32,6 @@ const Hero = () => {
           </p>
           <div className="hero-buttons">
             <a href="#services" className="btn btn-primary">Explore Our Services</a>
-            <a href="#insights" className="btn btn-secondary">Read Our Insights</a>
           </div>
         </div>
       </div>

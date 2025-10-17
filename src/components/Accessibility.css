@@ -1,0 +1,119 @@
+.accessibility-page {
+  min-height: 100vh;
+  background: white;
+  padding-top: 80px;
+}
+
+.accessibility-hero {
+  background: #f8fafc;
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.accessibility-hero .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.accessibility-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0f1d50;
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.2;
+}
+
+.accessibility-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.accessibility-content {
+  background: white;
+}
+
+.main-statement {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.main-statement a {
+  color: #0f1d50;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.main-statement a:hover {
+  color: #c7a256;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .accessibility-page {
+    padding-top: 70px;
+  }
+
+  .accessibility-hero {
+    padding: 3rem 0 2rem;
+  }
+
+  .accessibility-hero .container {
+    padding: 0 1.5rem;
+  }
+
+  .accessibility-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .accessibility-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .main-statement {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .accessibility-hero {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .accessibility-hero .container {
+    padding: 0 1rem;
+  }
+
+  .accessibility-hero h1 {
+    font-size: 2rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+  }
+
+  .accessibility-container {
+    padding: 2rem 1rem;
+  }
+
+  .main-statement {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}

@@ -217,6 +217,7 @@
 }
 
 /* Mobile Menu Styles */
+
 @media (max-width: 768px) {
   .nav-container {
     width: 92%;
