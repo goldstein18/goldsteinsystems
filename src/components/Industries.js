@@ -4,6 +4,11 @@ import './Industries.css';
 const Industries = () => {
   const industries = [
     {
+      icon: 'fas fa-landmark',
+      title: 'Government',
+      description: 'Modernize public services and enhance citizen engagement.'
+    },
+    {
       icon: 'fas fa-industry',
       title: 'Manufacturing',
       description: 'Drive operational excellence and digital transformation in manufacturing.'

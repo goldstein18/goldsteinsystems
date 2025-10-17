@@ -25,7 +25,7 @@ function App() {
       <Hero />
       <Services />
       <Industries />
-      <Insights />
+      {/* <Insights /> */}
       <About />
       <CTA />
     </>

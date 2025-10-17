@@ -4,27 +4,45 @@ import './Services.css';
 const Services = () => {
   const services = [
     {
-      icon: 'fas fa-chart-line',
-      title: 'Strategy',
-      description: 'Develop winning strategies that create sustainable competitive advantage and drive growth.',
+      icon: 'fas fa-code',
+      title: 'Software Engineering & Product Development',
+      description: 'Building scalable, secure, and high-performance digital solutions.',
       link: '#'
     },
     {
-      icon: 'fas fa-users',
-      title: 'Organization',
-      description: 'Build high-performing organizations that can execute strategy and drive results.',
+      icon: 'fas fa-shield-alt',
+      title: 'Cybersecurity & Risk Management',
+      description: 'Protecting digital assets with proactive security strategy and threat mitigation.',
+      link: '#'
+    },
+    {
+      icon: 'fas fa-brain',
+      title: 'Artificial Intelligence & Data Strategy',
+      description: 'Turning data into intelligence with AI-driven insights and automation.',
+      link: '#'
+    },
+    {
+      icon: 'fas fa-digital-tachograph',
+      title: 'Digital Transformation',
+      description: 'Modernizing systems, workflows, and customer experiences to drive growth.',
       link: '#'
     },
     {
       icon: 'fas fa-rocket',
-      title: 'Transformation',
-      description: 'Lead large-scale change initiatives that deliver breakthrough performance improvements.',
+      title: 'Venture & Business Building',
+      description: 'From idea to execution, helping enterprises launch new ventures and business models.',
       link: '#'
     },
     {
-      icon: 'fas fa-cogs',
-      title: 'Operations',
-      description: 'Optimize operations to improve efficiency, reduce costs, and enhance customer experience.',
+      icon: 'fas fa-vr-cardboard',
+      title: 'Emerging & Immersive Technologies',
+      description: 'Exploring the future through Web3, AR/VR, and the Metaverse.',
+      link: '#'
+    },
+    {
+      icon: 'fas fa-chess-knight',
+      title: 'Technology Strategy & Advisory',
+      description: 'Aligning technology investments with strategic business goals.',
       link: '#'
     }
   ];
@@ -44,9 +62,6 @@ const Services = () => {
               </div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <a href={service.link} className="learn-more">
-                Learn More <i className="fas fa-arrow-right"></i>
-              </a>
             </div>
           ))}
         </div>

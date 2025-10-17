@@ -12,7 +12,6 @@
 .industry-card {
   background: white;
   padding: 2.5rem 2rem;
-  border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -27,12 +26,13 @@
 .industry-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, #c7a256, #b8935a);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
+  box-shadow: 0 4px 14px rgba(199, 162, 86, 0.3);
 }
 
 .industry-icon i {
