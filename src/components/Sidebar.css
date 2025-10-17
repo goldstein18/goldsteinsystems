@@ -161,10 +161,20 @@
 @media (max-width: 768px) {
   .sidebar {
     width: 100%;
+    max-width: 100%;
   }
   
   .sidebar-header {
     padding: 1.5rem;
+  }
+  
+  .sidebar-logo-img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .sidebar-company-name {
+    font-size: 1.1rem;
   }
   
   .sidebar-link {
@@ -174,5 +184,37 @@
   
   .sidebar-footer {
     padding: 1rem 1.5rem;
+  }
+  
+  .sidebar-footer-content span {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-header {
+    padding: 1.2rem;
+  }
+  
+  .sidebar-logo-img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .sidebar-company-name {
+    font-size: 1rem;
+  }
+  
+  .sidebar-link {
+    padding: 1rem 1.2rem;
+    font-size: 1.1rem;
+  }
+  
+  .sidebar-footer {
+    padding: 0.85rem 1.2rem;
+  }
+  
+  .sidebar-footer-content span {
+    font-size: 0.8rem;
   }
 }
