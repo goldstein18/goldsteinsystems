@@ -384,9 +384,18 @@
   .careers-hero {
     padding: 6rem 0 4rem;
   }
+  
+  .careers-hero .container {
+    padding: 0 1.5rem;
+  }
+  
+  .hero-content {
+    text-align: left;
+  }
 
   .hero-text h1 {
     font-size: 2.5rem;
+    text-align: left;
   }
 
   .careers-intro h2 {
@@ -410,9 +419,30 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+  
+  .people-text {
+    text-align: left;
+  }
 
   .newsletter-form {
     flex-direction: column;
+  }
+  
+  .newsletter-section {
+    text-align: left;
+  }
+  
+  .newsletter-content h3 {
+    text-align: left;
+  }
+  
+  .newsletter-content p {
+    text-align: left;
+  }
+  
+  .newsletter-form {
+    margin: 0;
+    max-width: 100%;
   }
 
   .alert-content {
@@ -425,9 +455,14 @@
   .careers-hero {
     padding: 4rem 0 3rem;
   }
+  
+  .careers-hero .container {
+    padding: 0 1rem;
+  }
 
   .hero-text h1 {
     font-size: 2rem;
+    text-align: left;
   }
 
   .careers-main {
@@ -448,5 +483,10 @@
 
   .newsletter-section {
     padding: 2rem 1rem;
+    text-align: left;
+  }
+  
+  .people-text {
+    text-align: left;
   }
 }
