@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Clients from './components/Clients';
 import Services from './components/Services';
 import Industries from './components/Industries';
 import Insights from './components/Insights';
@@ -29,6 +30,7 @@ function App() {
   const HomePage = () => (
     <>
       <Hero />
+      <Clients />
       <Services />
       <Industries />
       {/* <Insights /> */}
