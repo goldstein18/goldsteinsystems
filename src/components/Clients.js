@@ -25,7 +25,7 @@ const Clients = () => {
       <div className="container">
         <div className="clients-header">
           <h3>Trusted by Leading Companies</h3>
-          <p>We've had the privilege of working with industry leaders</p>
+          <p>We've executed high-impact initiatives for industry leaders.</p>
         </div>
         <div className="clients-grid">
           {clients.map((client, index) => (
