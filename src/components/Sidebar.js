@@ -22,30 +22,30 @@ const Sidebar = ({ isOpen, onClose }) => {
           <nav className="sidebar-nav">
             <ul className="sidebar-menu">
               <li className="sidebar-item">
-                <a href="#industries" className="sidebar-link">
+                <a href="#industries" className="sidebar-link" onClick={onClose}>
                   Industries
                   <i className="fas fa-chevron-right"></i>
                 </a>
               </li>
               <li className="sidebar-item">
-                <a href="#services" className="sidebar-link">
+                <a href="#services" className="sidebar-link" onClick={onClose}>
                   Consulting Services
                   <i className="fas fa-chevron-right"></i>
                 </a>
               </li>
               <li className="sidebar-item">
-                <a href="#digital" className="sidebar-link">
+                <a href="#digital" className="sidebar-link" onClick={(e) => { e.preventDefault(); onClose(); alert('Coming Soon'); }}>
                   Digital
                 </a>
               </li>
               <li className="sidebar-item">
-                <a href="#insights" className="sidebar-link">
+                <a href="#insights" className="sidebar-link" onClick={(e) => { e.preventDefault(); onClose(); alert('Coming Soon'); }}>
                   Insights
                   <i className="fas fa-chevron-right"></i>
                 </a>
               </li>
               <li className="sidebar-item">
-                <a href="#about" className="sidebar-link">
+                <a href="#about" className="sidebar-link" onClick={onClose}>
                   About
                   <i className="fas fa-chevron-right"></i>
                 </a>
@@ -62,12 +62,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 
             <ul className="sidebar-menu">
               <li className="sidebar-item">
-                <a href="#subscribe" className="sidebar-link">
-                  Subscribe
-                </a>
-              </li>
-              <li className="sidebar-item">
-                <a href="#contact" className="sidebar-link">
+                <a href="#contact" className="sidebar-link" onClick={onClose}>
                   Contact
                 </a>
               </li>
