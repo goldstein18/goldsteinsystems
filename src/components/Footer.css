@@ -54,10 +54,15 @@
     width: 92%;
   }
   
+  .footer-bottom {
+    text-align: left;
+  }
+  
   .footer-links {
     gap: 1rem;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   
   .footer-links a {
@@ -65,6 +70,7 @@
   }
   
   .footer-copyright {
+    text-align: left;
     font-size: 1rem;
     margin-top: 1rem;
   }
@@ -73,10 +79,16 @@
 @media (max-width: 480px) {
   .footer .container {
     width: 96%;
+    padding: 0 1rem;
+  }
+  
+  .footer-bottom {
+    text-align: left;
   }
   
   .footer-links {
     gap: 0.8rem;
+    align-items: flex-start;
   }
   
   .footer-links a {
@@ -84,6 +96,7 @@
   }
   
   .footer-copyright {
+    text-align: left;
     font-size: 1rem;
     margin-top: 0.8rem;
   }
