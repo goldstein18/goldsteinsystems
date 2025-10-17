@@ -27,7 +27,8 @@
   font-weight: 700;
   padding: 18px 36px;
   font-size: 1.1rem;
-  border: 3px solid white;
+  border: 1px solid white;
+  border-radius: 0;
   box-shadow: none;
   text-transform: uppercase;
   letter-spacing: 1px;
