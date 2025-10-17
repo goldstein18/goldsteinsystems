@@ -6,6 +6,9 @@ const Footer = () => {
     <footer id="contact" className="footer">
       <div className="container">
         <div className="footer-bottom">
+          <div className="footer-logo">
+            <img src="/logo.png" alt="Goldstein Systems Logo" />
+          </div>
           <div className="footer-links">
             <a href="#contact">Contact us</a>
             <a href="/careers">Careers</a>
