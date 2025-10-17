@@ -116,16 +116,6 @@ const DataDeletionRequest = () => {
           </div>
         )}
 
-        <div className="info-section">
-          <h3>What happens next?</h3>
-          <ul>
-            <li>We will verify your identity</li>
-            <li>Your data will be permanently deleted from our systems</li>
-            <li>You will receive a confirmation email once completed</li>
-            <li>This process typically takes up to 30 days</li>
-          </ul>
-        </div>
-
         <div className="footer-info">
           <p>For questions about data deletion, contact us at:</p>
           <p><strong>michael@goldsteinsystems.com</strong></p>
