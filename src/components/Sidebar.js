@@ -62,7 +62,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 
             <ul className="sidebar-menu">
               <li className="sidebar-item">
-                <a href="#contact" className="sidebar-link" onClick={onClose}>
+                <a href="https://wa.me/524421143497" target="_blank" rel="noopener noreferrer" className="sidebar-link">
                   Contact
                 </a>
               </li>

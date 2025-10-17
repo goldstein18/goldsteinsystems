@@ -10,7 +10,7 @@ const Footer = () => {
             <img src="/logo.png" alt="Goldstein Systems Logo" />
           </div>
           <div className="footer-links">
-            <a href="#contact">Contact us</a>
+            <a href="https://wa.me/524421143497" target="_blank" rel="noopener noreferrer">Contact us</a>
             <a href="/careers">Careers</a>
             <a href="/accessibility">Accessibility</a>
             <a href="/terms">Terms of use</a>

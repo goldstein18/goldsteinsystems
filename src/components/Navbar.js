@@ -180,7 +180,7 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
           </li>
         </ul>
         <div className="nav-right">
-          <a href="#contact" className="contact-link">Contact</a>
+          <a href="https://wa.me/524421143497" target="_blank" rel="noopener noreferrer" className="contact-link">Contact</a>
         </div>
       </div>
     </nav>

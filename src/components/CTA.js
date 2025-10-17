@@ -8,7 +8,7 @@ const CTA = () => {
         <div className="cta-content">
           <h2>What can we help you achieve?</h2>
           <p>Let's discuss how we can help you achieve extraordinary results.</p>
-          <a href="#contact" className="btn btn-primary">Let's Get to Work</a>
+          <a href="https://wa.me/524421143497" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Let's Get to Work</a>
         </div>
       </div>
     </section>
