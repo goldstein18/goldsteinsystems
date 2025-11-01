@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import ProposalG5499 from './components/ProposalG5499';
 import SEOHead from './components/SEOHead';
 import DataDeletionRequest from './components/DataDeletionRequest';
+import DataDeletionRequestCent from './components/DataDeletionRequestCent';
 import Accessibility from './components/Accessibility';
 import Terms from './components/Terms';
 import Privacy from './components/Privacy';
@@ -53,6 +54,7 @@ function App() {
           } />
           <Route path="/propuestaG5499" element={<ProposalG5499 />} />
           <Route path="/request" element={<DataDeletionRequest />} />
+          <Route path="/request-cent" element={<DataDeletionRequestCent />} />
           <Route path="/accessibility" element={
             <>
               <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />

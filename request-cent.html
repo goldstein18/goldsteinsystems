@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Deletion Request - CENT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        input, button {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .success-message {
+            color: green;
+            text-align: center;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; border-radius: 10px; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            <h1 style="color: white; font-size: 2.2rem; font-weight: bold; margin: 0 0 1rem 0; text-align: center; text-transform: uppercase; letter-spacing: 1px;">CENT App</h1>
+            <p style="color: white; font-size: 1.3rem; margin: 0; text-align: center; font-weight: 600;">by CENT SAPI DE CV</p>
+        </div>
+        <h2>Delete Your Data</h2>
+        <form id="deleteForm">
+            <input type="email" id="email" placeholder="Your email" required>
+            <input type="text" id="userId" placeholder="User ID (optional)" >
+            <button type="submit">Submit Request</button>
+        </form>
+        <div class="success-message" id="successMessage"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('deleteForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const userId = document.getElementById('userId').value;
+
+            // Here you would send the data to your backend server
+            // Example using fetch:
+            fetch('https://your-backend.com/delete-request', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, userId }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                successMessage.textContent = 'Your data deletion request has been submitted.';
+                form.reset();
+            })
+            .catch(error => {
+                successMessage.textContent = 'Something went wrong. Please try again later.';
+                console.error(error);
+            });
+        });
+    </script>
+</body>
+</html>
+
