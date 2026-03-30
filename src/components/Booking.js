@@ -22,14 +22,16 @@ const Booking = () => {
         </a>
       </header>
       <main className="booking-page">
-      <div className="booking-container">
-        <div
-          className="calendly-inline-widget"
-          data-url="https://calendly.com/goldsteinsystems/30min?primary_color=c8a156"
-          style={{ minWidth: '320px', height: '700px' }}
-        ></div>
-      </div>
-    </main>
+        <div className="booking-container">
+          <div className="booking-widget-wrap">
+            <div
+              className="calendly-inline-widget"
+              data-url="https://calendly.com/goldsteinsystems/30min?primary_color=c8a156"
+              style={{ minWidth: '320px', height: '700px' }}
+            ></div>
+          </div>
+        </div>
+      </main>
     </>
   );
 };
