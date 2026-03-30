@@ -1,0 +1,11 @@
+.booking-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 110px 0 40px;
+}
+
+.booking-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}

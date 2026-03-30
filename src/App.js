@@ -19,6 +19,7 @@ import Privacy from './components/Privacy';
 import CookiePolicy from './components/CookiePolicy';
 import Login from './components/Login';
 import Careers from './components/Careers';
+import Booking from './components/Booking';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -87,6 +88,13 @@ function App() {
             <>
               <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
               <Careers />
+              <Footer />
+            </>
+          } />
+          <Route path="/booking" element={
+            <>
+              <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+              <Booking />
               <Footer />
             </>
           } />
