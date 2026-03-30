@@ -93,7 +93,6 @@ function App() {
           } />
           <Route path="/booking" element={
             <>
-              <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
               <Booking />
               <Footer />
             </>

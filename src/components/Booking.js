@@ -15,7 +15,13 @@ const Booking = () => {
   }, []);
 
   return (
-    <main className="booking-page">
+    <>
+      <header className="booking-header">
+        <a href="/" className="booking-logo-link">
+          <img src="/logo.png" alt="Goldstein Systems" className="booking-logo" />
+        </a>
+      </header>
+      <main className="booking-page">
       <div className="booking-container">
         <div
           className="calendly-inline-widget"
@@ -24,6 +30,7 @@ const Booking = () => {
         ></div>
       </div>
     </main>
+    </>
   );
 };
 
