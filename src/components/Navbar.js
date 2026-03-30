@@ -7,6 +7,50 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const [isScrolled, setIsScrolled] = useState(!isHomePage);
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [hoverTimeout, setHoverTimeout] = useState(null);
+
+  const industriesLeft = [
+    'Aerospace and Defense',
+    'Automotive',
+    'Banking',
+    'Capital Markets',
+    'Chemicals',
+    'Communications and Media',
+    'Consumer Goods and Services',
+    'Health',
+    'High Tech'
+  ];
+
+  const industriesRight = [
+    'Industrial',
+    'Insurance',
+    'Public Service',
+    'Private Equity',
+    'Retail',
+    'Software and Platforms',
+    'Travel'
+  ];
+
+  const capabilitiesLeft = [
+    'Cloud',
+    'Customer Service',
+    'Cybersecurity',
+    'Data and Artificial Intelligence',
+    'Digital Engineering and Manufacturing',
+    'Ecosystem Partners',
+    'Emerging Technology',
+    'Finance and Risk Management',
+    'Infrastructure and Capital Projects'
+  ];
+
+  const capabilitiesRight = [
+    'Metaverse',
+    'Strategy',
+    'Supply Chain',
+    'Sustainability',
+    'Technology Transformation'
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,8 +65,26 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      if (hoverTimeout) {
+        clearTimeout(hoverTimeout);
+      }
     };
-  }, [isHomePage]);
+  }, [hoverTimeout, isHomePage]);
+
+  const handleDropdownMouseEnter = (menuName) => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+      setHoverTimeout(null);
+    }
+    setOpenDropdown(menuName);
+  };
+
+  const handleDropdownMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 120);
+    setHoverTimeout(timeout);
+  };
 
   const handleComingSoon = (e) => {
     e.preventDefault();
@@ -46,79 +108,69 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <li 
             className="nav-item dropdown"
+            onMouseEnter={() => handleDropdownMouseEnter('industries')}
+            onMouseLeave={handleDropdownMouseLeave}
           >
             <a href="#industries" className="nav-link">
               Industries
+              <span className={`triangle-icon ${openDropdown === 'industries' ? 'open' : ''}`}></span>
             </a>
-            {/* {console.log('isIndustriesOpen:', isIndustriesOpen)}
-            {isIndustriesOpen && (
-              <div 
-                className="dropdown-menu"
-                onMouseEnter={handleDropdownMouseEnter}
-                onMouseLeave={handleDropdownMouseLeave}
-              >
+            {openDropdown === 'industries' && (
+              <div className="dropdown-menu">
                 <div className="dropdown-content">
-                  <div className="dropdown-column">
-                    <h4>Aerospace & Defense</h4>
-                    <h4>Automotive & Mobility</h4>
-                    <h4>Aviation</h4>
-                    <h4>Construction & Infrastructure</h4>
-                    <h4>Consumer Products</h4>
-                    <h4>Agribusiness</h4>
-                  </div>
-                  <div className="dropdown-column">
-                    <h4>Financial Services</h4>
-                    <ul>
-                      <li>Banking</li>
-                      <li>Insurance</li>
-                      <li>Payments</li>
-                      <li>Fintech</li>
-                      <li>Digital Assets and Blockchain</li>
-                    </ul>
-                  </div>
-                  <div className="dropdown-column">
-                    <h4>Healthcare & Life Sciences</h4>
-                    <ul>
-                      <li>Pharmaceuticals</li>
-                      <li>Medical Technology</li>
-                      <li>Healthcare Payers</li>
-                      <li>Healthcare Providers and Services</li>
-                    </ul>
-                    <h4>Machinery & Equipment</h4>
-                    <h4>Media & Entertainment</h4>
-                  </div>
-                  <div className="dropdown-column">
-                    <h4>Private Equity</h4>
-                    <h4>Real Estate</h4>
-                    <h4>Retail</h4>
-                    <ul>
-                      <li>Grocery</li>
-                      <li>Fashion & Luxury</li>
-                      <li>Restaurants</li>
-                    </ul>
-                    <h4>Social Impact</h4>
-                    <h4>Technology</h4>
-                    <ul>
-                      <li>IT Services</li>
-                      <li>Software</li>
-                    </ul>
-                  </div>
-                  <div className="dropdown-column">
-                    <h4>Transportation</h4>
-                    <ul>
-                      <li>Freight & Logistics</li>
-                      <li>Public Transit</li>
-                      <li>Travel & Leisure</li>
-                    </ul>
+                  <h4 className="dropdown-title">Industries</h4>
+                  <div className="dropdown-columns">
+                    <div className="dropdown-column">
+                      <ul>
+                        {industriesLeft.map((industry) => (
+                          <li key={industry}>{industry}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="dropdown-column">
+                      <ul>
+                        {industriesRight.map((industry) => (
+                          <li key={industry}>{industry}</li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-            )} */}
+            )}
           </li>
-          <li className="nav-item">
+          <li
+            className="nav-item dropdown"
+            onMouseEnter={() => handleDropdownMouseEnter('capabilities')}
+            onMouseLeave={handleDropdownMouseLeave}
+          >
             <a href="#services" className="nav-link">
-              Consulting Services
+              Capabilities
+              <span className={`triangle-icon ${openDropdown === 'capabilities' ? 'open' : ''}`}></span>
             </a>
+            {openDropdown === 'capabilities' && (
+              <div className="dropdown-menu">
+                <div className="dropdown-content">
+                  <h4 className="dropdown-title">Capabilities</h4>
+                  <div className="dropdown-columns">
+                    <div className="dropdown-column">
+                      <ul>
+                        {capabilitiesLeft.map((capability) => (
+                          <li key={capability}>{capability}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="dropdown-column">
+                      <ul>
+                        {capabilitiesRight.map((capability) => (
+                          <li key={capability}>{capability}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </li>
           <li className="nav-item">
             <a href="#digital" className="nav-link" onClick={handleComingSoon}>
