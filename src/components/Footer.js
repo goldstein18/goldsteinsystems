@@ -20,7 +20,7 @@ const Footer = () => {
             <a href="/login">Log In</a>
           </div>
           <div className="footer-copyright">
-            © 2017-2025 Goldstein Systems, LTD
+            © 2017-2026 Goldstein Systems, LTD
           </div>
         </div>
       </div>
