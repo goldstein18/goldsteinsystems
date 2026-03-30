@@ -45,7 +45,7 @@ const Insights = () => {
                 <p>{insight.description}</p>
                 <div className="insight-meta">
                   <span className="date">{insight.date}</span>
-                  <a href="#" className="read-more">Read More</a>
+                  <button type="button" className="read-more">Read More</button>
                 </div>
               </div>
             </div>

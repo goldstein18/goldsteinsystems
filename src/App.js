@@ -6,7 +6,6 @@ import Hero from './components/Hero';
 import Clients from './components/Clients';
 import Services from './components/Services';
 import Industries from './components/Industries';
-import Insights from './components/Insights';
 import About from './components/About';
 import CTA from './components/CTA';
 import Footer from './components/Footer';

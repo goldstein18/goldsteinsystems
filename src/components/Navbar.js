@@ -7,8 +7,6 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const [isScrolled, setIsScrolled] = useState(!isHomePage);
-  const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
-  const [hoverTimeout, setHoverTimeout] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,42 +21,8 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      if (hoverTimeout) {
-        clearTimeout(hoverTimeout);
-      }
     };
-  }, [hoverTimeout, isHomePage]);
-
-  const handleIndustriesMouseEnter = () => {
-    console.log('Mouse entered Industries');
-    if (hoverTimeout) {
-      clearTimeout(hoverTimeout);
-      setHoverTimeout(null);
-    }
-    setIsIndustriesOpen(true);
-  };
-
-  const handleIndustriesMouseLeave = () => {
-    const timeout = setTimeout(() => {
-      setIsIndustriesOpen(false);
-    }, 100);
-    setHoverTimeout(timeout);
-  };
-
-  const handleDropdownMouseEnter = () => {
-    if (hoverTimeout) {
-      clearTimeout(hoverTimeout);
-      setHoverTimeout(null);
-    }
-    setIsIndustriesOpen(true);
-  };
-
-  const handleDropdownMouseLeave = () => {
-    const timeout = setTimeout(() => {
-      setIsIndustriesOpen(false);
-    }, 100);
-    setHoverTimeout(timeout);
-  };
+  }, [isHomePage]);
 
   const handleComingSoon = (e) => {
     e.preventDefault();
@@ -82,8 +46,6 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <li 
             className="nav-item dropdown"
-            onMouseEnter={handleIndustriesMouseEnter}
-            onMouseLeave={handleIndustriesMouseLeave}
           >
             <a href="#industries" className="nav-link">
               Industries
