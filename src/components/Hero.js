@@ -28,7 +28,7 @@ const Hero = () => {
         <div className="hero-content">
           <h1 className="hero-title">Building the future, today</h1>
           <p className="hero-subtitle">
-            Goldstein Systems is a leading cybersecurity and software development firm that helps organizations secure their digital assets and build innovative solutions for tomorrow's challenges.
+            Goldstein Systems is a leading cyber intelligence and tech consulting firm that helps organizations secure their digital assets and build innovative solutions for tomorrow's challenges.
           </p>
           <div className="hero-buttons">
             <a href="#services" className="btn btn-primary">Explore Our Services</a>
