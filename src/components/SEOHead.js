@@ -73,7 +73,7 @@ const SEOHead = () => {
     }
 
     if (path === '/') {
-      document.title = 'Global Cybersecurity & Software Development Firm | Goldstein Systems ®';
+      document.title = 'Goldstein Systems | Cyber Intelligence & Consulting.';
 
       setMetaName(
         'description',
@@ -81,7 +81,7 @@ const SEOHead = () => {
       );
 
       applySocial(
-        'Goldstein Systems | Cybersecurity & Software Development',
+        'Goldstein Systems | Cyber Intelligence & Consulting.',
         'Global cybersecurity and software development firm. We help organizations secure digital assets and build innovative solutions—from strategy to implementation.'
       );
 
@@ -89,7 +89,7 @@ const SEOHead = () => {
       return;
     }
 
-    document.title = 'Goldstein Systems | Cybersecurity & Software Development';
+    document.title = 'Goldstein Systems | Cyber Intelligence & Consulting.';
 
     setMetaName(
       'description',
@@ -97,7 +97,7 @@ const SEOHead = () => {
     );
 
     applySocial(
-      'Goldstein Systems | Cybersecurity & Software Development',
+      'Goldstein Systems | Cyber Intelligence & Consulting.',
       'Cybersecurity and software development firm helping organizations secure digital assets and deliver innovative solutions.'
     );
 
