@@ -70,7 +70,8 @@
   font-weight: 700;
   color: #1a1a1a;
   margin: 0 0 1.5rem 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: -0.02em;
 }
 
 .hero-description {
@@ -112,7 +113,7 @@
   font-size: 1.125rem;
   font-weight: 600;
   color: #1a1a1a;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   transition: color 0.3s ease;
   text-align: left;
 }

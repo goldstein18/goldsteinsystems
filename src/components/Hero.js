@@ -1,6 +1,6 @@
 import React from 'react';
 import './Hero.css';
-import heroMainGold from '../assets/bg4.png';
+import heroMainGold from '../assets/ai-hero.png';
 
 const Hero = () => {
   return (
@@ -28,7 +28,7 @@ const Hero = () => {
         <div className="hero-content">
           <h1 className="hero-title">Building the future, today</h1>
           <p className="hero-subtitle">
-            Goldstein Systems is a leading cyber intelligence and tech consulting firm that helps organizations secure their digital assets and build innovative solutions for tomorrow's challenges.
+            From AI integration to cybersecurity to digital transformation, we help organizations move faster, operate smarter, and stay ahead of what's next.
           </p>
           <div className="hero-buttons">
             <a href="#services" className="btn btn-primary">Explore Our Services</a>
