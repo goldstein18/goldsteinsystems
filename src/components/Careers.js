@@ -107,17 +107,6 @@ const Careers = () => {
             </div>
           </div>
 
-          <div className="awards-section">
-            <div className="awards-content">
-              <h2>Awards & recognition</h2>
-              <h3>Outside experts agree - people love it here</h3>
-              <p>
-                There are many reasons we're frequently ranked a top place to work, and a top place to work 
-                for women, the LGBTQ community, and underrepresented groups. The main reason is the people.
-              </p>
-            </div>
-          </div>
-
           <div className="newsletter-section">
             <div className="newsletter-content">
               <h3>Want to stay in touch?</h3>
