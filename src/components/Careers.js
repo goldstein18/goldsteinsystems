@@ -49,24 +49,6 @@ const Careers = () => {
     }
   ];
 
-  const careerStories = [
-    {
-      title: 'From Startup to Enterprise',
-      description: 'How I transitioned from building MVPs to architecting enterprise-scale solutions.',
-      author: 'Sarah Chen, Senior Software Engineer'
-    },
-    {
-      title: 'Securing the Future',
-      description: 'Leading cybersecurity initiatives that protect millions of users worldwide.',
-      author: 'Michael Rodriguez, Cybersecurity Lead'
-    },
-    {
-      title: 'Data-Driven Decisions',
-      description: 'Using AI and analytics to transform how organizations make critical business decisions.',
-      author: 'Dr. Emily Watson, Data Science Director'
-    }
-  ];
-
   return (
     <div className="careers-page">
       <div className="careers-hero">
@@ -123,31 +105,6 @@ const Careers = () => {
               </p>
               <button className="explore-stories-button" onClick={handleButtonClick}>Explore Career Stories</button>
             </div>
-
-            <div className="career-stories">
-              {careerStories.map((story, index) => (
-                <div key={index} className="story-card">
-                  <h4>{story.title}</h4>
-                  <p>{story.description}</p>
-                  <span className="author">{story.author}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="people-section">
-            <div className="people-content">
-              <div className="people-text">
-                <h2>Our people</h2>
-                <h3>Meet your future peers</h3>
-                <button className="people-button" onClick={handleButtonClick}>Our people</button>
-              </div>
-              <div className="people-text">
-                <h2>Students</h2>
-                <h3>Get your start</h3>
-                <button className="people-button" onClick={handleButtonClick}>Students</button>
-              </div>
-            </div>
           </div>
 
           <div className="awards-section">
@@ -158,21 +115,6 @@ const Careers = () => {
                 There are many reasons we're frequently ranked a top place to work, and a top place to work 
                 for women, the LGBTQ community, and underrepresented groups. The main reason is the people.
               </p>
-            </div>
-          </div>
-
-          <div className="job-alert">
-            <div className="alert-content">
-              <div className="alert-icon">⚠</div>
-              <div className="alert-text">
-                <h4>Job Scam Alert</h4>
-                <p>
-                  Goldstein Systems is aware of fraudulent job offers made through fake websites, social media, 
-                  and spoofed emails. These scams are not affiliated with Goldstein Systems. Our hiring process 
-                  happens only through this website. We never ask for personal or financial information outside 
-                  of our official platform.
-                </p>
-              </div>
             </div>
           </div>
 

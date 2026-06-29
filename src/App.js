@@ -20,6 +20,7 @@ import CookiePolicy from './components/CookiePolicy';
 import Login from './components/Login';
 import Careers from './components/Careers';
 import Booking from './components/Booking';
+import ProjectManager from './components/ProjectManager';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -94,6 +95,12 @@ function App() {
           <Route path="/booking" element={
             <>
               <Booking />
+              <Footer />
+            </>
+          } />
+          <Route path="/pm" element={
+            <>
+              <ProjectManager />
               <Footer />
             </>
           } />
