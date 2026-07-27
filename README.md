@@ -56,6 +56,31 @@ npm start
 
 4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+### Sanity CMS Setup (Insights)
+
+1. Copy env template and fill in your Sanity values:
+```bash
+cp .env.example .env
+```
+
+2. Update `.env`:
+```bash
+REACT_APP_SANITY_PROJECT_ID=your_project_id
+REACT_APP_SANITY_DATASET=production
+REACT_APP_SANITY_API_VERSION=2024-01-01
+```
+
+3. In Sanity Studio, create an `insight` document type with:
+- `title` (string)
+- `slug` (slug)
+- `excerpt` (text)
+- `publishedAt` (datetime)
+- `featured` (boolean)
+- `coverImage` (image)
+- `category` (reference, optional)
+
+If Sanity env vars are not set or there are no published `insight` documents yet, the site falls back to local placeholder insights.
+
 ### Build for Production
 
 ```bash

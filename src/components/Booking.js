@@ -26,7 +26,7 @@ const Booking = () => {
           <div className="booking-widget-wrap">
             <div
               className="calendly-inline-widget"
-              data-url="https://calendly.com/goldsteinsystems/30min?primary_color=c8a156"
+              data-url="https://calendly.com/goldsteinsystems/30min?primary_color=c7a256&text_color=0f1d50&background_color=ffffff"
               style={{ minWidth: '320px', height: '700px' }}
             ></div>
           </div>
