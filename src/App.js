@@ -93,18 +93,8 @@ function App() {
               <Footer />
             </>
           } />
-          <Route path="/booking" element={
-            <>
-              <Booking />
-              <Footer />
-            </>
-          } />
-          <Route path="/pm" element={
-            <>
-              <ProjectManager />
-              <Footer />
-            </>
-          } />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/pm" element={<ProjectManager />} />
         </Routes>
       </div>
     </Router>
