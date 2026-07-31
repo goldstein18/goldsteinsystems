@@ -155,6 +155,7 @@
 
 .update-submit {
   margin-top: 0.5rem;
+  width: 100%;
   background: #c7a256;
   color: #0f1d50;
   font-family: 'Inter', sans-serif;
@@ -165,6 +166,7 @@
   border: none;
   padding: 16px 40px;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .update-submit:hover {
@@ -192,10 +194,5 @@
 
   .update-subtitle {
     font-size: 0.95rem;
-  }
-
-  .update-submit {
-    width: 100%;
-    max-width: 280px;
   }
 }
