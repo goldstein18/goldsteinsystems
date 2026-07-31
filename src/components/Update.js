@@ -3,12 +3,17 @@ import './Update.css';
 import heroMainGold from '../assets/ai-hero.png';
 
 const STORAGE_KEY = 'gs-update-authenticated';
-const UPDATE_PASSWORD = process.env.REACT_APP_UPDATE_PASSWORD || '';
+const UPDATE_PASSWORD = 'BlueBrand26!';
+// July 31, 2026 23:59 America/New_York (EDT, UTC-4)
+const RELEASE_AT = new Date('2026-07-31T23:59:00-04:00');
+
+const isBeforeRelease = () => Date.now() < RELEASE_AT.getTime();
 
 const Update = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [authenticated, setAuthenticated] = useState(false);
+  const [waitingForRelease, setWaitingForRelease] = useState(isBeforeRelease());
 
   useEffect(() => {
     if (sessionStorage.getItem(STORAGE_KEY) === '1') {
@@ -16,17 +21,27 @@ const Update = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (!authenticated || !waitingForRelease) return undefined;
+
+    const tick = () => {
+      if (!isBeforeRelease()) {
+        setWaitingForRelease(false);
+      }
+    };
+
+    tick();
+    const id = window.setInterval(tick, 15000);
+    return () => window.clearInterval(id);
+  }, [authenticated, waitingForRelease]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
 
-    if (!UPDATE_PASSWORD) {
-      setError('Access is not configured yet. Please contact Goldstein Systems.');
-      return;
-    }
-
     if (password === UPDATE_PASSWORD) {
       sessionStorage.setItem(STORAGE_KEY, '1');
+      setWaitingForRelease(isBeforeRelease());
       setAuthenticated(true);
       setPassword('');
       return;
@@ -68,6 +83,16 @@ const Update = () => {
                 Enter
               </button>
             </form>
+          </div>
+        ) : waitingForRelease ? (
+          <div className="update-content">
+            <p className="update-eyebrow">Goldstein Systems</p>
+            <h1 className="update-title">Update Scheduled</h1>
+            <p className="update-subtitle">
+              Access confirmed. This client update will be published at{' '}
+              <span className="update-highlight">11:59 PM New York time</span> today.
+              Please check back then.
+            </p>
           </div>
         ) : (
           <div className="update-content">
