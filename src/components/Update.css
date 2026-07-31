@@ -1,7 +1,6 @@
 .update-page {
   padding: 0;
-  height: 100vh;
-  max-height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,27 +9,44 @@
   background: #0f1d50;
 }
 
+.update-page--letter {
+  align-items: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 .update-image-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  max-height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   z-index: 1;
   overflow: hidden;
   background: #0f1d50;
 }
 
+.update-page--letter .update-image-background {
+  position: fixed;
+}
+
 .update-hero-image {
   width: 100%;
   height: 100%;
-  max-height: 100vh;
+  min-height: 100vh;
   object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
   animation: updateZoomInOut 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+.update-hero-image--still {
+  animation: none !important;
+  transform: scale(1) !important;
+  will-change: auto;
 }
 
 @keyframes updateZoomInOut {
@@ -49,9 +65,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  max-height: 100vh;
+  min-height: 100vh;
   background: rgba(15, 29, 80, 0.78);
   z-index: 2;
+}
+
+.update-page--letter .update-overlay {
+  background: rgba(15, 29, 80, 0.9);
 }
 
 .update-container {
@@ -66,22 +86,26 @@
   z-index: 3;
 }
 
-.update-gate,
-.update-content {
+.update-page--letter .update-container {
+  max-width: 560px;
+  padding: 4rem 20px 5rem;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.update-gate {
   width: 100%;
   max-width: 480px;
   text-align: center;
 }
 
-.update-eyebrow {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #c7a256;
-  margin-bottom: 1rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+.update-brand-logo {
+  display: block;
+  height: 48px;
+  width: auto;
+  max-width: min(220px, 70vw);
+  margin: 0 auto 1.5rem;
+  object-fit: contain;
 }
 
 .update-title {
@@ -103,11 +127,6 @@
   line-height: 1.6;
   max-width: 420px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.update-highlight {
-  color: #c7a256;
-  font-weight: 600;
 }
 
 .update-form {
@@ -173,9 +192,85 @@
   background: #b8954a;
 }
 
+.update-letter {
+  width: 100%;
+  max-width: 34rem;
+  margin: 0 auto;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  animation: updateLetterIn 0.45s ease-out both;
+}
+
+@keyframes updateLetterIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.update-letter-logo {
+  display: block;
+  height: 36px;
+  width: auto;
+  margin: 0 0 2.5rem;
+  object-fit: contain;
+}
+
+.update-letter-greeting {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 1.75rem;
+  line-height: 1.15;
+}
+
+.update-letter-body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.update-letter-body p {
+  margin: 0 0 1.25rem;
+}
+
+.update-letter-link {
+  color: #c7a256;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: rgba(199, 162, 86, 0.55);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  word-break: break-word;
+}
+
+.update-letter-link:hover {
+  color: #dfc07a;
+  text-decoration-color: #dfc07a;
+}
+
+.update-letter-signoff {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.update-letter-ps {
+  margin-bottom: 0 !important;
+  color: rgba(255, 255, 255, 0.7);
+}
+
 @media (max-width: 768px) {
-  .update-overlay {
-    background: rgba(15, 29, 80, 0.85);
+  .update-overlay,
+  .update-page--letter .update-overlay {
+    background: rgba(15, 29, 80, 0.92);
   }
 
   .update-title {
@@ -185,14 +280,41 @@
   .update-subtitle {
     font-size: 1.05rem;
   }
+
+  .update-page--letter .update-container {
+    padding: 3rem 16px 4rem;
+  }
+
+  .update-letter-logo {
+    height: 32px;
+    margin-bottom: 2rem;
+  }
+
+  .update-letter-greeting {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .update-letter-body {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
+  .update-brand-logo {
+    height: 40px;
+    margin-bottom: 1.25rem;
+  }
+
   .update-title {
     font-size: 1.8rem;
   }
 
   .update-subtitle {
     font-size: 0.95rem;
+  }
+
+  .update-letter-greeting {
+    font-size: 1.75rem;
   }
 }

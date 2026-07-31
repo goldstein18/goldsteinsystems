@@ -5,10 +5,6 @@ const HERO_IMAGE_SRC = '/ai-hero.jpg';
 const STORAGE_KEY = 'gs-update-authenticated-until';
 const SESSION_MS = 5 * 60 * 1000;
 const UPDATE_PASSWORD = 'BlueBrand26!';
-// July 31, 2026 23:59 America/New_York (EDT, UTC-4)
-const RELEASE_AT = new Date('2026-07-31T23:59:00-04:00');
-
-const isBeforeRelease = () => Date.now() < RELEASE_AT.getTime();
 
 const getSessionExpiry = () => {
   const raw = sessionStorage.getItem(STORAGE_KEY);
@@ -26,7 +22,6 @@ const Update = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [authenticated, setAuthenticated] = useState(false);
-  const [waitingForRelease, setWaitingForRelease] = useState(isBeforeRelease());
 
   const logout = () => {
     clearSession();
@@ -45,7 +40,6 @@ const Update = () => {
 
     if (isSessionValid()) {
       setAuthenticated(true);
-      setWaitingForRelease(isBeforeRelease());
     } else {
       clearSession();
     }
@@ -70,31 +64,12 @@ const Update = () => {
     return () => window.clearTimeout(id);
   }, [authenticated]);
 
-  useEffect(() => {
-    if (!authenticated || !waitingForRelease) return undefined;
-
-    const tick = () => {
-      if (!isSessionValid()) {
-        logout();
-        return;
-      }
-      if (!isBeforeRelease()) {
-        setWaitingForRelease(false);
-      }
-    };
-
-    tick();
-    const id = window.setInterval(tick, 15000);
-    return () => window.clearInterval(id);
-  }, [authenticated, waitingForRelease]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
 
     if (password === UPDATE_PASSWORD) {
       sessionStorage.setItem(STORAGE_KEY, String(Date.now() + SESSION_MS));
-      setWaitingForRelease(isBeforeRelease());
       setAuthenticated(true);
       setPassword('');
       return;
@@ -104,12 +79,12 @@ const Update = () => {
   };
 
   return (
-    <section className="update-page">
+    <section className={`update-page${authenticated ? ' update-page--letter' : ''}`}>
       <div className="update-image-background">
         <img
           src={HERO_IMAGE_SRC}
           alt=""
-          className="update-hero-image"
+          className={`update-hero-image${authenticated ? ' update-hero-image--still' : ''}`}
           fetchPriority="high"
           decoding="async"
           width={1920}
@@ -121,7 +96,11 @@ const Update = () => {
       <div className="update-container">
         {!authenticated ? (
           <div className="update-gate">
-            <p className="update-eyebrow">Goldstein Systems</p>
+            <img
+              src="/logo.png"
+              alt="Goldstein Systems"
+              className="update-brand-logo"
+            />
             <h1 className="update-title">Client Update</h1>
             <p className="update-subtitle">
               Enter the password provided by your Goldstein Systems contact to view this update.
@@ -145,24 +124,68 @@ const Update = () => {
               </button>
             </form>
           </div>
-        ) : waitingForRelease ? (
-          <div className="update-content">
-            <p className="update-eyebrow">Goldstein Systems</p>
-            <h1 className="update-title">Update Scheduled</h1>
-            <p className="update-subtitle">
-              Access confirmed. This client update will be published at{' '}
-              <span className="update-highlight">11:59 PM New York time</span> today.
-              Please check back then.
-            </p>
-          </div>
         ) : (
-          <div className="update-content">
-            <p className="update-eyebrow">Goldstein Systems</p>
-            <h1 className="update-title">Client Update</h1>
-            <p className="update-subtitle">
-              You are signed in. Client information for this update will appear here.
-            </p>
-          </div>
+          <article className="update-letter">
+            <img
+              src="/logo.png"
+              alt="Goldstein Systems"
+              className="update-letter-logo"
+            />
+
+            <h1 className="update-letter-greeting">Hi Jonny,</h1>
+
+            <div className="update-letter-body">
+              <p>Gaspi here.</p>
+              <p>
+                I&apos;d appreciate your help moving a couple of items forward when you have a
+                moment.
+              </p>
+              <p>
+                First, please release the latest push on the GitHub repo. Once that&apos;s done,
+                download the build and update your env file with the contents provided in this
+                secure link:
+              </p>
+              <p>
+                <a
+                  className="update-letter-link"
+                  href="https://share.1password.com/s#21WBfltBlnovAAwXg0PUHLv6z-gEmTsdTMe4-pHvdLQ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  share.1password.com
+                </a>
+              </p>
+              <p>
+                With that in place, you should be able to authenticate via Google and receive the
+                OTP.
+              </p>
+              <p>
+                On Oliver&apos;s connection: once the push is released, the test results will be
+                visible here:{' '}
+                <a
+                  className="update-letter-link"
+                  href="https://www.slopesearch.com/dev/skiresort-xml"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  slopesearch.com/dev/skiresort-xml
+                </a>
+                . Please note that until the steps above are complete, this link will return a 404.
+              </p>
+              <p>
+                Thanks for prioritizing this. If anything is unclear or you need support along the
+                way, reach out and I&apos;ll assist.
+              </p>
+              <p className="update-letter-signoff">
+                Best,
+                <br />
+                Gaspi
+              </p>
+              <p className="update-letter-ps">
+                P.S. Thank you for the bonus you sent a few months ago, much appreciated.
+              </p>
+            </div>
+          </article>
         )}
       </div>
     </section>
