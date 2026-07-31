@@ -90,6 +90,7 @@ const SEOHead = () => {
       );
 
       setMetaName('keywords', DEFAULT_KEYWORDS);
+      setMetaName('theme-color', '#0f1d50');
 
       let preload = document.getElementById('update-hero-preload');
       if (!preload) {
