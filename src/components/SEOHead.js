@@ -72,6 +72,23 @@ const SEOHead = () => {
       return;
     }
 
+    if (path === '/update') {
+      document.title = 'Client Update | Goldstein Systems';
+
+      setMetaName(
+        'description',
+        'Private client update from Goldstein Systems. Enter your access password to continue.'
+      );
+
+      applySocial(
+        'Client Update | Goldstein Systems',
+        'Private client update from Goldstein Systems. Enter your access password to continue.'
+      );
+
+      setMetaName('keywords', DEFAULT_KEYWORDS);
+      return;
+    }
+
     if (path === '/') {
       document.title = 'Goldstein Systems | Cyber Intelligence & Consulting.';
 

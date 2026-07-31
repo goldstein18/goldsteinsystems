@@ -21,6 +21,7 @@ import Login from './components/Login';
 import Careers from './components/Careers';
 import Booking from './components/Booking';
 import ProjectManager from './components/ProjectManager';
+import Update from './components/Update';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -93,6 +94,7 @@ function App() {
           } />
           <Route path="/booking" element={<Booking />} />
           <Route path="/pm" element={<ProjectManager />} />
+          <Route path="/update" element={<Update />} />
         </Routes>
       </div>
     </Router>
