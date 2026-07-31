@@ -1,13 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import './Update.css';
-import heroMainGold from '../assets/ai-hero.png';
 
-const STORAGE_KEY = 'gs-update-authenticated';
+const HERO_IMAGE_SRC = '/ai-hero.jpg';
+const STORAGE_KEY = 'gs-update-authenticated-until';
+const SESSION_MS = 5 * 60 * 1000;
 const UPDATE_PASSWORD = 'BlueBrand26!';
 // July 31, 2026 23:59 America/New_York (EDT, UTC-4)
 const RELEASE_AT = new Date('2026-07-31T23:59:00-04:00');
 
 const isBeforeRelease = () => Date.now() < RELEASE_AT.getTime();
+
+const getSessionExpiry = () => {
+  const raw = sessionStorage.getItem(STORAGE_KEY);
+  const expiry = raw ? Number(raw) : 0;
+  return Number.isFinite(expiry) ? expiry : 0;
+};
+
+const isSessionValid = () => getSessionExpiry() > Date.now();
+
+const clearSession = () => {
+  sessionStorage.removeItem(STORAGE_KEY);
+};
 
 const Update = () => {
   const [password, setPassword] = useState('');
@@ -15,16 +28,56 @@ const Update = () => {
   const [authenticated, setAuthenticated] = useState(false);
   const [waitingForRelease, setWaitingForRelease] = useState(isBeforeRelease());
 
+  const logout = () => {
+    clearSession();
+    setAuthenticated(false);
+    setPassword('');
+    setError('');
+  };
+
   useEffect(() => {
-    if (sessionStorage.getItem(STORAGE_KEY) === '1') {
+    const preload = document.createElement('link');
+    preload.rel = 'preload';
+    preload.as = 'image';
+    preload.href = HERO_IMAGE_SRC;
+    preload.setAttribute('fetchpriority', 'high');
+    document.head.appendChild(preload);
+
+    if (isSessionValid()) {
       setAuthenticated(true);
+      setWaitingForRelease(isBeforeRelease());
+    } else {
+      clearSession();
     }
+
+    return () => {
+      preload.remove();
+    };
   }, []);
+
+  useEffect(() => {
+    if (!authenticated) return undefined;
+
+    const expiry = getSessionExpiry();
+    const remaining = expiry - Date.now();
+
+    if (remaining <= 0) {
+      logout();
+      return undefined;
+    }
+
+    const id = window.setTimeout(logout, remaining);
+    return () => window.clearTimeout(id);
+  }, [authenticated]);
 
   useEffect(() => {
     if (!authenticated || !waitingForRelease) return undefined;
 
     const tick = () => {
+      if (!isSessionValid()) {
+        logout();
+        return;
+      }
       if (!isBeforeRelease()) {
         setWaitingForRelease(false);
       }
@@ -40,7 +93,7 @@ const Update = () => {
     setError('');
 
     if (password === UPDATE_PASSWORD) {
-      sessionStorage.setItem(STORAGE_KEY, '1');
+      sessionStorage.setItem(STORAGE_KEY, String(Date.now() + SESSION_MS));
       setWaitingForRelease(isBeforeRelease());
       setAuthenticated(true);
       setPassword('');
@@ -53,7 +106,15 @@ const Update = () => {
   return (
     <section className="update-page">
       <div className="update-image-background">
-        <img src={heroMainGold} alt="" className="update-hero-image" />
+        <img
+          src={HERO_IMAGE_SRC}
+          alt=""
+          className="update-hero-image"
+          fetchPriority="high"
+          decoding="async"
+          width={1920}
+          height={1084}
+        />
         <div className="update-overlay"></div>
       </div>
 

@@ -23,6 +23,10 @@ const SEOHead = () => {
     const origin = typeof window !== 'undefined' ? window.location.origin : '';
     const ogImage = origin ? `${origin}/logo.png` : 'https://goldsteinsystems.com/logo.png';
 
+    if (path !== '/update') {
+      document.getElementById('update-hero-preload')?.remove();
+    }
+
     const applySocial = (title, description) => {
       setMetaProperty('og:title', title);
       setMetaProperty('og:description', description);
@@ -86,6 +90,17 @@ const SEOHead = () => {
       );
 
       setMetaName('keywords', DEFAULT_KEYWORDS);
+
+      let preload = document.getElementById('update-hero-preload');
+      if (!preload) {
+        preload = document.createElement('link');
+        preload.id = 'update-hero-preload';
+        preload.rel = 'preload';
+        preload.as = 'image';
+        preload.href = '/ai-hero.jpg';
+        preload.setAttribute('fetchpriority', 'high');
+        document.head.appendChild(preload);
+      }
       return;
     }
 
