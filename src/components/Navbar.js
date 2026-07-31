@@ -178,11 +178,6 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
             </a>
           </li>
           <li className="nav-item">
-            <a href="#insights" className="nav-link" onClick={handleComingSoon}>
-              Insights
-            </a>
-          </li>
-          <li className="nav-item">
             <a href="#about" className="nav-link">
               About
             </a>

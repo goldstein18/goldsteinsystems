@@ -39,12 +39,6 @@ const Sidebar = ({ isOpen, onClose }) => {
                 </a>
               </li>
               <li className="sidebar-item">
-                <a href="#insights" className="sidebar-link" onClick={(e) => { e.preventDefault(); onClose(); alert('Coming Soon'); }}>
-                  Insights
-                  <i className="fas fa-chevron-right"></i>
-                </a>
-              </li>
-              <li className="sidebar-item">
                 <a href="#about" className="sidebar-link" onClick={onClose}>
                   About
                   <i className="fas fa-chevron-right"></i>
